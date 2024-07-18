@@ -3,14 +3,14 @@ import 'package:flutter_fitness_app/config/theme/app_theme.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class SplashScreen extends StatelessWidget {
+  const SplashScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          
-           children: [
+        child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
           Text('BH',
               style: GoogleFonts.montserrat(
                 fontSize: 100,
@@ -34,7 +34,6 @@ class SplashScreen extends StatelessWidget {
                   fontStyle: FontStyle.italic,
                 )),
           ])
-
         ]),
       ),
     );
