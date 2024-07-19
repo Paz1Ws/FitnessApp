@@ -11,11 +11,10 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp.router(
+    return MaterialApp.router(
       routerConfig: router,
       title: 'Fitness App',
       debugShowCheckedModeBanner: false,
-
     );
   }
 }
