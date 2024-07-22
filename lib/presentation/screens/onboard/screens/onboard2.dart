@@ -1,17 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_fitness_app/presentation/widgets/onboarding_next_button.dart';
-import 'package:go_router/go_router.dart';
-import 'package:google_fonts/google_fonts.dart';
-import '../../../../config/theme/app_theme.dart';
-import '../../../widgets/widgets.dart';
+import 'package:flutter_fitness_app/presentation/widgets/onboarding/onboarding_description_label.dart';
 
 class Onboarding2 extends StatelessWidget {
   const Onboarding2({super.key});
   @override
   Widget build(BuildContext context) {
-    // Future.delayed(const Duration(seconds: 2), () {
-    //   context.go('/onboarding3');
-    // });
     return Scaffold(
         body: Stack(
       children: [
@@ -21,8 +14,12 @@ class Onboarding2 extends StatelessWidget {
           height: MediaQuery.sizeOf(context).height,
           width: MediaQuery.sizeOf(context).width,
         ),
-        Center(
-          child: OnboardingNextButton(),
+        OnboardingDescriptiveLabel(
+          iconAsset: "assets/images/design/workout.png",
+          progressIndicatorAsset:
+              "assets/images/onboarding/onboarding_indicator_1.png",
+          text: "Start Your Journey Towards A More Active Lifestyle",
+          index: 3,
         ),
       ],
     ));

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+import 'package:flutter_fitness_app/presentation/widgets/onboarding/onboarding_next_button.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../../../config/theme/app_theme.dart';
 import '../../../widgets/widgets.dart';
@@ -8,9 +8,6 @@ class Onboarding extends StatelessWidget {
   const Onboarding({super.key});
   @override
   Widget build(BuildContext context) {
-    Future.delayed(const Duration(seconds: 2), () {
-      context.go('/onboarding/onboarding2');
-    });
     return Scaffold(
         body: Stack(
       children: [
@@ -31,6 +28,9 @@ class Onboarding extends StatelessWidget {
                   color: secondaryColor,
                 )),
             FitBody(),
+            OnboardingNextButton(
+              index: 2,
+            )
           ],
         ),
       ],

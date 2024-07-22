@@ -19,6 +19,10 @@ final router = GoRouter(
           path: 'onboarding3',
           builder: (context, state) => Onboarding3(),
         ),
+        GoRoute(
+          path: 'onboarding4',
+          builder: (context, state) => Onboarding4(),
+        ),
       ],
     ),
   ],
