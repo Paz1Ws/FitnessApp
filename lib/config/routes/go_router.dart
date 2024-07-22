@@ -12,13 +12,13 @@ final router = GoRouter(
       builder: (context, state) => Onboarding(),
       routes: [
         GoRoute(
-          path: 'onboarding1',
+          path: 'onboarding2',
           builder: (context, state) => Onboarding2(),
         ),
-        // GoRoute(
-        //   path: 'onboarding2',
-        //   builder: (context, state) => Onboarding3(),
-        // ),
+        GoRoute(
+          path: 'onboarding3',
+          builder: (context, state) => Onboarding3(),
+        ),
       ],
     ),
   ],

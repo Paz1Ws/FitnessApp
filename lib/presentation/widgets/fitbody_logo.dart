@@ -12,7 +12,7 @@ class FitBody extends StatelessWidget {
     return Center(
       child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
         Image.asset(
-          "assets/images/FB.png",
+          "assets/images/design/FB.png",
           filterQuality: FilterQuality.high,
         ),
         Row(mainAxisAlignment: MainAxisAlignment.center, children: [

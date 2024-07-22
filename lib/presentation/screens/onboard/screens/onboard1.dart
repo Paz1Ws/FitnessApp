@@ -9,13 +9,13 @@ class Onboarding extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Future.delayed(const Duration(seconds: 2), () {
-      context.go('/onboarding/onboarding1');
+      context.go('/onboarding/onboarding2');
     });
     return Scaffold(
         body: Stack(
       children: [
         Image.asset(
-          "assets/images/onboarding1.png",
+          "assets/images/onboarding/onboarding1.png",
           fit: BoxFit.cover,
           height: MediaQuery.sizeOf(context).height,
           width: MediaQuery.sizeOf(context).width,
