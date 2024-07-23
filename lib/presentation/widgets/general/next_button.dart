@@ -1,12 +1,12 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:go_router/go_router.dart';
 import '../../../config/theme/app_theme.dart';
 
-class OnboardingNextButton extends StatelessWidget {
-  final int index;
-  const OnboardingNextButton({super.key, required this.index});
+class NextButton extends StatelessWidget {
+  late String text;
+  final onPressed;
+  NextButton({super.key, required this.text, required this.onPressed});
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
@@ -18,16 +18,14 @@ class OnboardingNextButton extends StatelessWidget {
             backgroundColor: Colors.transparent,
             elevation: 8,
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(24),
+              borderRadius: BorderRadius.circular(36),
             ),
-            side: BorderSide(color: backgroundColor, width: 1.0),
-            minimumSize: Size(250, 60), // Increase the size of the button
+            side: BorderSide(color: accentColor, width: 1.0),
+            minimumSize: Size(240, 50), // Increase the size of the button
           ),
-          onPressed: () {
-            context.go('/onboarding/onboarding$index');
-          },
+          onPressed: onPressed,
           child: Text(
-            'Next',
+            text,
             style: GoogleFonts.openSans(
               color: Colors.white,
               fontSize: 16,

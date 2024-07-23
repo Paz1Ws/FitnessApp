@@ -1,20 +1,20 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_fitness_app/config/theme/app_theme.dart';
-import 'package:flutter_fitness_app/presentation/widgets/onboarding/onboarding_next_button.dart';
+import 'package:flutter_fitness_app/presentation/widgets/general/next_button.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class OnboardingDescriptiveLabel extends StatelessWidget {
   String iconAsset;
   String progressIndicatorAsset;
   String text;
-  int index;
+  String buttonText;
+  final onPressed;
   OnboardingDescriptiveLabel({
+    required this.buttonText,
+    required this.onPressed,
     required this.iconAsset,
     required this.progressIndicatorAsset,
     required this.text,
-    required this.index,
     super.key,
   });
 
@@ -35,7 +35,7 @@ class OnboardingDescriptiveLabel extends StatelessWidget {
             Text(text,
                 textAlign: TextAlign.center,
                 style: GoogleFonts.poppins(
-                  color: backgroundColor,
+                  color: accentColor,
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                 )),
@@ -46,7 +46,10 @@ class OnboardingDescriptiveLabel extends StatelessWidget {
           ]),
         ),
         SizedBox(height: 20),
-        OnboardingNextButton(index: index)
+        NextButton(
+          text: buttonText,
+          onPressed: onPressed,
+        )
       ],
     );
   }

@@ -9,6 +9,7 @@ class SplashScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     Future.delayed(const Duration(seconds: 2), () {
       context.go('/onboarding');
+      print('SplashScreen: Navigating to /onboarding after 2 seconds delay');
     });
     return Scaffold(
       backgroundColor: Colors.black,

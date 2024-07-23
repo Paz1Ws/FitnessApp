@@ -14,15 +14,18 @@ dependencies:
   go_router: ^14.2.1
   google_fonts: ^6.2.1
 
+  animate_do: any
+  font_awesome_flutter: any
 dev_dependencies:
   flutter_lints: ^3.0.0
   flutter_test:
     sdk: flutter
+  hugeicons: ^0.0.5
 
 flutter:
   uses-material-design: true
   assets:
-   - assets/images/
-   - assets/images/design/
-   - assets/images/onboarding/
-   
+    - assets/images/
+    - assets/images/design/
+    - assets/images/design/auth/
+    - assets/images/onboarding/

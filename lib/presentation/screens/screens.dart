@@ -3,3 +3,4 @@ export 'onboard/screens/onboard1.dart';
 export 'onboard/screens/onboard2.dart';
 export 'onboard/screens/onboard3.dart';
 export 'onboard/screens/onboard4.dart';
+export '../../presentation/screens/auth/login/screens/welcome_login.dart';
