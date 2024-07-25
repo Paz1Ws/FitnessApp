@@ -4,3 +4,6 @@ export 'onboard/screens/onboard2.dart';
 export 'onboard/screens/onboard3.dart';
 export 'onboard/screens/onboard4.dart';
 export '../../presentation/screens/auth/login/screens/welcome_login.dart';
+export '../../presentation/screens/auth/login/screens/sign_up.dart';
+export '../../presentation/screens/auth/login/screens/forgot_password.dart';
+export '../../presentation/screens/auth/login/screens/set_password.dart';

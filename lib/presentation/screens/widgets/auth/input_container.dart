@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../../config/theme/app_theme.dart';
+import '../../../../config/theme/app_theme.dart';
 
 class InputContainer extends StatelessWidget {
   List<String> textFormFields;
@@ -21,18 +22,14 @@ class InputContainer extends StatelessWidget {
       children: [
         Container(
           color: primaryColor,
-          width: double.infinity,
-          height: MediaQuery.sizeOf(context).height / 3,
           child: Padding(
-            padding: const EdgeInsets.all(18.0),
+            padding: const EdgeInsets.all(22.0),
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly, // Add this line
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: List.generate(
                 textFormFields.length,
                 (index) => Padding(
-                  // Wrap TextFormField with Padding
-                  padding: const EdgeInsets.symmetric(
-                      vertical: 8.0), // Add vertical padding
+                  padding: const EdgeInsets.symmetric(vertical: 8.0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -47,7 +44,7 @@ class InputContainer extends StatelessWidget {
                           filled: true,
                           fillColor: Colors.white,
                           border: OutlineInputBorder(
-                            borderRadius: BorderRadius.all(Radius.circular(16)),
+                            borderRadius: BorderRadius.all(Radius.circular(20)),
                             borderSide: BorderSide.none,
                           ),
                         ),
@@ -61,9 +58,11 @@ class InputContainer extends StatelessWidget {
         ),
         islogin
             ? Transform(
-                transform: Matrix4.translationValues(-10, -45, 0),
+                transform: Matrix4.translationValues(-10, -40, 0),
                 child: TextButton(
-                    onPressed: null,
+                    onPressed: () {
+                      context.go('/passwordforgotten');
+                    },
                     child: Text('Forgot Password?',
                         style: GoogleFonts.poppins(
                           color: darkColor,

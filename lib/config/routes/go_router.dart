@@ -30,6 +30,18 @@ final router = GoRouter(
     GoRoute(
       path: '/login',
       builder: (context, state) => FadeInRight(child: WelcomeLogin()),
-    )
+    ),
+    GoRoute(
+      path: '/signup',
+      builder: (context, state) => FadeInRight(child: SignUp()),
+    ),
+    GoRoute(
+      path: '/passwordforgotten',
+      builder: (context, state) => FadeInRight(child: ForgotPassword()),
+    ),
+    GoRoute(
+      path: '/setpassword',
+      builder: (context, state) => FadeInRight(child: SetPassword()),
+    ),
   ],
 );

@@ -6,8 +6,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../../../widgets/widgets.dart';
 
-class WelcomeLogin extends StatelessWidget {
-  const WelcomeLogin({super.key});
+class SignUp extends StatelessWidget {
+  const SignUp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,12 +19,12 @@ class WelcomeLogin extends StatelessWidget {
           icon:
               Icon(FontAwesomeIcons.caretLeft, color: secondaryColor, size: 30),
           onPressed: () {
-            // context.go('/onboarding/onboarding2');
+            context.go('/login');
           },
         ),
         title: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 105),
-          child: Text('LogIn',
+          padding: const EdgeInsets.symmetric(horizontal: 60),
+          child: Text('Create Account',
               style: GoogleFonts.poppins(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
@@ -36,49 +36,53 @@ class WelcomeLogin extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Transform(
-            transform: Matrix4.translationValues(0, -40, 0),
+            transform: Matrix4.translationValues(0, -25, 0),
             child: Column(
               children: [
-                Text('Welcome',
+                Text('Let\'s Start',
                     textAlign: TextAlign.center,
                     style: GoogleFonts.poppins(
                       fontSize: 30,
                       fontWeight: FontWeight.bold,
                       color: accentColor,
                     )),
-                SizedBox(height: 20),
-                Text('Get the full experience of FitBody',
-                    textAlign: TextAlign.center,
-                    style: GoogleFonts.leagueSpartan(
-                      fontSize: 20,
-                      fontWeight: FontWeight.normal,
-                      color: accentColor,
-                    )),
               ],
             ),
           ),
           InputContainer(
-            islogin: true,
+            islogin: false,
             formFields: 4,
             textFormFields: const [
-              'Username or Email',
+              'Full Name',
+              'Email or Mobile Number',
               'Password',
+              'Confirm Password',
             ],
           ),
+          SizedBox(height: 20),
+          Text(
+              'By continue you agree to our\nTerms of Service and Privacy Policy',
+              textAlign: TextAlign.center,
+              style: GoogleFonts.poppins(
+                fontSize: 12,
+                fontWeight: FontWeight.normal,
+                color: accentColor,
+              )),
+          SizedBox(height: 15),
           NextButton(
-            text: 'Log In',
+            text: 'Sign Up',
             onPressed: () {
               context.go('/home');
             },
           ),
-          SizedBox(height: 30),
+          SizedBox(height: 15),
           Text('Or Sign Up with',
               style: GoogleFonts.poppins(
                 fontSize: 12,
                 fontWeight: FontWeight.normal,
                 color: accentColor,
               )),
-          SizedBox(height: 20),
+          SizedBox(height: 15),
           Padding(
             padding: const EdgeInsets.only(right: 20),
             child: Row(
@@ -111,7 +115,7 @@ class WelcomeLogin extends StatelessWidget {
                   )),
               GestureDetector(
                 onTap: () {
-                  context.go('/signup');
+                  //context.go('/signup');
                 },
                 child: Text('Sign Up',
                     style: GoogleFonts.poppins(

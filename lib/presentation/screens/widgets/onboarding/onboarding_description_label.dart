@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_fitness_app/config/theme/app_theme.dart';
-import 'package:flutter_fitness_app/presentation/widgets/general/next_button.dart';
+import 'package:flutter_fitness_app/presentation/screens/widgets/general/next_button.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class OnboardingDescriptiveLabel extends StatelessWidget {

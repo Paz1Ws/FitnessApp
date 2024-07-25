@@ -1,7 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../../../config/theme/app_theme.dart';
+import '../../../../config/theme/app_theme.dart';
 
 class NextButton extends StatelessWidget {
   late String text;

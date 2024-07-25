@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_fitness_app/presentation/widgets/onboarding/onboarding_description_label.dart';
+import 'package:flutter_fitness_app/presentation/screens/widgets/onboarding/onboarding_description_label.dart';
 import 'package:go_router/go_router.dart';
 
 class Onboarding4 extends StatelessWidget {
