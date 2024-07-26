@@ -3,8 +3,7 @@ import 'package:flutter_fitness_app/config/theme/app_theme.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
-import '../../../widgets/widgets.dart';
+import '../../../../widgets/widgets.dart';
 
 class SignUp extends StatelessWidget {
   const SignUp({super.key});
@@ -12,9 +11,9 @@ class SignUp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: darkColor,
+      backgroundColor: lightdarkColor,
       appBar: AppBar(
-        backgroundColor: darkColor,
+        backgroundColor: lightdarkColor,
         leading: IconButton(
           icon:
               Icon(FontAwesomeIcons.caretLeft, color: secondaryColor, size: 30),
@@ -104,28 +103,7 @@ class SignUp extends StatelessWidget {
             ),
           ),
           SizedBox(height: 20),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text('Don\'t have an account? ',
-                  style: GoogleFonts.poppins(
-                    fontSize: 12,
-                    fontWeight: FontWeight.normal,
-                    color: accentColor,
-                  )),
-              GestureDetector(
-                onTap: () {
-                  //context.go('/signup');
-                },
-                child: Text('Sign Up',
-                    style: GoogleFonts.poppins(
-                      fontSize: 12,
-                      fontWeight: FontWeight.normal,
-                      color: secondaryColor,
-                    )),
-              ),
-            ],
-          ),
+          DontHaveAccount(),
         ],
       ),
     );

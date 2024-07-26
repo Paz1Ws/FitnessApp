@@ -28,4 +28,5 @@ flutter:
     - assets/images/
     - assets/images/design/
     - assets/images/design/auth/
+    - assets/images/design/information/
     - assets/images/onboarding/

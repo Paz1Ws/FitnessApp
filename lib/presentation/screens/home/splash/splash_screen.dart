@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import '../../widgets/widgets.dart';
+import '../../../widgets/widgets.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});

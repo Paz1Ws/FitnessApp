@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../../../config/theme/app_theme.dart';
+import '../../../config/theme/app_theme.dart';
 
 class InputContainer extends StatelessWidget {
   List<String> textFormFields;
@@ -35,7 +35,7 @@ class InputContainer extends StatelessWidget {
                     children: [
                       Text(" ${textFormFields[index]}",
                           style: GoogleFonts.leagueSpartan(
-                            color: darkColor,
+                            color: lightdarkColor,
                             fontSize: 18,
                             fontWeight: FontWeight.w600,
                           )),
@@ -65,7 +65,7 @@ class InputContainer extends StatelessWidget {
                     },
                     child: Text('Forgot Password?',
                         style: GoogleFonts.poppins(
-                          color: darkColor,
+                          color: lightdarkColor,
                           fontSize: 12,
                           fontWeight: FontWeight.bold,
                         ))),

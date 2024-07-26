@@ -1,6 +1,11 @@
+import 'package:flutter/widgets.dart';
+import 'package:flutter_fitness_app/config/theme/app_theme.dart';
+import 'package:flutter_fitness_app/presentation/screens/information/setup/screens/walkway/select_gender.dart';
 import 'package:go_router/go_router.dart';
 import '../../presentation/screens/screens.dart';
 import 'package:animate_do/animate_do.dart';
+
+import '../../presentation/widgets/information/template_walkway_screen.dart';
 
 final router = GoRouter(
   routes: [
@@ -43,5 +48,73 @@ final router = GoRouter(
       path: '/setpassword',
       builder: (context, state) => FadeInRight(child: SetPassword()),
     ),
+    GoRoute(
+        path: '/setUp',
+        builder: (context, state) => FadeInRight(child: WalkwayController()),
+        routes: [
+          GoRoute(
+            path: 'selectAge',
+            builder: (context, state) => FadeOutRight(
+              child: SelectGender(),
+            ),
+          ),
+
+// GoRoute(
+//             path: '/selectage',
+//             builder: (context, state) => FadeOutRight(
+//               child: TemplateSetupScreen(
+//                 title: 'Select your age',
+//                 widget: SelectAge(),
+//               ),
+//             ),),
+//              GoRoute(
+//             path: '/selectage',
+//             builder: (context, state) => FadeOutRight(
+//               child: TemplateSetupScreen(
+//                 title: 'Select your age',
+//                 widget: SelectAge(),
+//               ),
+//             ),),
+//              GoRoute(
+//             path: '/selectage',
+//             builder: (context, state) => FadeOutRight(
+//               child: TemplateSetupScreen(
+//                 title: 'Select your age',
+//                 widget: SelectAge(),
+//               ),
+//             ),),
+//              GoRoute(
+//             path: '/selectage',
+//             builder: (context, state) => FadeOutRight(
+//               child: TemplateSetupScreen(
+//                 title: 'Select your age',
+//                 widget: SelectAge(),
+//               ),
+//             ),),
+//              GoRoute(
+//             path: '/selectage',
+//             builder: (context, state) => FadeOutRight(
+//               child: TemplateSetupScreen(
+//                 title: 'Select your age',
+//                 widget: SelectAge(),
+//               ),
+//             ),),
+//              GoRoute(
+//             path: '/selectage',
+//             builder: (context, state) => FadeOutRight(
+//               child: TemplateSetupScreen(
+//                 title: 'Select your age',
+//                 widget: SelectAge(),
+//               ),
+//             ),),
+
+// selectage
+// selectgender
+// selectgoal
+// selectweight
+// selectheight
+// selectactivity
+// fillprofile
+        ])
   ],
 );

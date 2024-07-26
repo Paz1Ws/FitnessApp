@@ -6,15 +6,13 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../../../widgets/widgets.dart';
 
-class ForgotPassword extends StatelessWidget {
-  const ForgotPassword({super.key});
-
+class SetPassword extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: darkColor,
+      backgroundColor: lightdarkColor,
       appBar: AppBar(
-        backgroundColor: darkColor,
+        backgroundColor: lightdarkColor,
         leading: IconButton(
           icon:
               Icon(FontAwesomeIcons.caretLeft, color: secondaryColor, size: 30),
@@ -23,8 +21,8 @@ class ForgotPassword extends StatelessWidget {
           },
         ),
         title: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 30),
-          child: Text('Forgotten Password',
+          padding: const EdgeInsets.symmetric(horizontal: 60),
+          child: Text('Set Password',
               style: GoogleFonts.poppins(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
@@ -36,41 +34,30 @@ class ForgotPassword extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Transform(
-            transform: Matrix4.translationValues(0, -25, 0),
-            child: Column(
-              children: [
-                Text('Forgot Password?',
-                    textAlign: TextAlign.center,
-                    style: GoogleFonts.poppins(
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold,
-                      color: accentColor,
-                    )),
-                SizedBox(height: 20),
-                Text(
-                  'Don\'t worry, we got you!',
-                  textAlign: TextAlign.center,
-                  style: GoogleFonts.leagueSpartan(
-                    fontSize: 20,
-                    fontWeight: FontWeight.normal,
-                    color: accentColor,
-                  ),
-                )
-              ],
+            transform: Matrix4.translationValues(0, -70, 0),
+            child: Text(
+              'Set a new password',
+              textAlign: TextAlign.center,
+              style: GoogleFonts.leagueSpartan(
+                fontSize: 30,
+                fontWeight: FontWeight.bold,
+                color: accentColor,
+              ),
             ),
           ),
           InputContainer(
             islogin: false,
-            formFields: 1,
+            formFields: 2,
             textFormFields: const [
-              'Enter your email or mobile number',
+              'Password',
+              'Confirm Password',
             ],
           ),
           SizedBox(height: 40),
           NextButton(
-            text: 'Continue',
+            text: 'Reset Password',
             onPressed: () {
-              context.go('/setpassword');
+              context.go('/login');
             },
           )
         ],
