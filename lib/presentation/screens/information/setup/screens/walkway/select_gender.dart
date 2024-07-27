@@ -4,7 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../../../../../config/theme/app_theme.dart';
 import '../../../../../widgets/widgets.dart';
-import '../../provider/selected_color_provider.dart';
+import '../../providers/selected_color_provider.dart';
 
 class SelectGender extends StatefulWidget {
   const SelectGender({super.key});

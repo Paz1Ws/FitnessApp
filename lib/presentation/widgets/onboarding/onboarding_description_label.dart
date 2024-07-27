@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_fitness_app/config/theme/app_theme.dart';
 import 'package:flutter_fitness_app/presentation/widgets/general/next_button.dart';
+import 'package:flutter_fitness_app/presentation/widgets/general/purple_bar.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class OnboardingDescriptiveLabel extends StatelessWidget {
@@ -23,9 +24,7 @@ class OnboardingDescriptiveLabel extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Container(
-          color: primaryColor,
-          width: double.infinity,
+        PurpleBar(
           height: MediaQuery.sizeOf(context).height / 5,
           child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
             Image.asset(

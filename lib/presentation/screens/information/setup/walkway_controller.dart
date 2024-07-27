@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../widgets/widgets.dart';
 import '../../screens.dart';
-import 'provider/scrollable_controller_provider.dart';
+import 'providers/scrollable_controller_provider.dart';
 
 class WalkwayController extends ConsumerStatefulWidget {
   const WalkwayController({super.key});
@@ -18,8 +18,8 @@ class _WalkwayControllerState extends ConsumerState<WalkwayController> {
     WelcomeSetupScreen(),
     SelectGender(),
     SelectAge(),
-    // SelectHeight(),
     SelectWeight(),
+    SelectHeight(),
     // SelectGoal(),
     // SelectActivityLevel(),
     // FillProfile(),
