@@ -16,6 +16,7 @@ dependencies:
 
   animate_do: any
   font_awesome_flutter: any
+  flutter_svg: ^2.0.10+1
 dev_dependencies:
   flutter_lints: ^3.0.0
   flutter_test:
@@ -28,5 +29,5 @@ flutter:
     - assets/images/
     - assets/images/design/
     - assets/images/design/auth/
-    - assets/images/design/information/
+    - assets/images/design/setup/
     - assets/images/onboarding/

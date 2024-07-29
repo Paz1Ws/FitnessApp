@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../../../config/theme/app_theme.dart';
-import '../../../../widgets/widgets.dart';
+import '../../../../config/theme/app_theme.dart';
 
 class WelcomeSetupScreen extends StatelessWidget {
   const WelcomeSetupScreen({super.key});
@@ -13,7 +12,7 @@ class WelcomeSetupScreen extends StatelessWidget {
           Opacity(
             opacity: 0.90,
             child: Image.asset(
-              'assets/images/design/information/fitness_person_welcome.png',
+              'assets/images/design/setup/fitness_person_welcome.png',
               fit: BoxFit.cover,
               width: double.infinity,
               height: MediaQuery.sizeOf(context).height / 1.8,

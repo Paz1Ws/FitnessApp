@@ -15,7 +15,8 @@ class NextButton extends StatelessWidget {
         filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.white.withOpacity(0.2),
+            backgroundColor:
+                text == 'Start' ? thirdColor : Colors.white.withOpacity(0.2),
             elevation: 8,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(36),
@@ -27,7 +28,7 @@ class NextButton extends StatelessWidget {
           child: Text(
             text,
             style: GoogleFonts.openSans(
-              color: Colors.white,
+              color: accentColor,
               fontSize: 16,
               fontWeight: FontWeight.bold,
             ),

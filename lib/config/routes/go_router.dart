@@ -1,11 +1,11 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_fitness_app/config/theme/app_theme.dart';
-import 'package:flutter_fitness_app/presentation/screens/information/setup/screens/walkway/select_gender.dart';
+import 'package:flutter_fitness_app/presentation/screens/setup/screens/walkway/select_gender.dart';
 import 'package:go_router/go_router.dart';
 import '../../presentation/screens/screens.dart';
 import 'package:animate_do/animate_do.dart';
 
-import '../../presentation/widgets/information/template_walkway_screen.dart';
+import '../../presentation/widgets/setup/template_walkway_screen.dart';
 
 final router = GoRouter(
   routes: [

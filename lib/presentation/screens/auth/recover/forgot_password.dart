@@ -11,69 +11,71 @@ class ForgotPassword extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: lightdarkColor,
-      appBar: AppBar(
+    return SafeArea(
+      child: Scaffold(
         backgroundColor: lightdarkColor,
-        leading: IconButton(
-          icon:
-              Icon(FontAwesomeIcons.caretLeft, color: secondaryColor, size: 30),
-          onPressed: () {
-            context.go('/login');
-          },
+        appBar: AppBar(
+          backgroundColor: lightdarkColor,
+          leading: IconButton(
+            icon: Icon(FontAwesomeIcons.caretLeft,
+                color: secondaryColor, size: 30),
+            onPressed: () {
+              context.go('/login');
+            },
+          ),
+          title: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 30),
+            child: Text('Forgotten Password',
+                style: GoogleFonts.poppins(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: secondaryColor,
+                )),
+          ),
         ),
-        title: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 30),
-          child: Text('Forgotten Password',
-              style: GoogleFonts.poppins(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-                color: secondaryColor,
-              )),
-        ),
-      ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Transform(
-            transform: Matrix4.translationValues(0, -25, 0),
-            child: Column(
-              children: [
-                Text('Forgot Password?',
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Transform(
+              transform: Matrix4.translationValues(0, -25, 0),
+              child: Column(
+                children: [
+                  Text('Forgot Password?',
+                      textAlign: TextAlign.center,
+                      style: GoogleFonts.poppins(
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold,
+                        color: accentColor,
+                      )),
+                  SizedBox(height: 20),
+                  Text(
+                    'Don\'t worry, we got you!',
                     textAlign: TextAlign.center,
-                    style: GoogleFonts.poppins(
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold,
+                    style: GoogleFonts.leagueSpartan(
+                      fontSize: 20,
+                      fontWeight: FontWeight.normal,
                       color: accentColor,
-                    )),
-                SizedBox(height: 20),
-                Text(
-                  'Don\'t worry, we got you!',
-                  textAlign: TextAlign.center,
-                  style: GoogleFonts.leagueSpartan(
-                    fontSize: 20,
-                    fontWeight: FontWeight.normal,
-                    color: accentColor,
-                  ),
-                )
+                    ),
+                  )
+                ],
+              ),
+            ),
+            InputContainer(
+              islogin: false,
+              formFields: 1,
+              textFormFields: const [
+                'Enter your email or mobile number',
               ],
             ),
-          ),
-          InputContainer(
-            islogin: false,
-            formFields: 1,
-            textFormFields: const [
-              'Enter your email or mobile number',
-            ],
-          ),
-          SizedBox(height: 40),
-          NextButton(
-            text: 'Continue',
-            onPressed: () {
-              context.go('/setpassword');
-            },
-          )
-        ],
+            SizedBox(height: 40),
+            NextButton(
+              text: 'Continue',
+              onPressed: () {
+                context.go('/setpassword');
+              },
+            )
+          ],
+        ),
       ),
     );
   }

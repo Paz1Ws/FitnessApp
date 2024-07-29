@@ -1,26 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+// import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../../../../../../config/theme/app_theme.dart';
-import '../../../../../widgets/widgets.dart';
+import '../../../../../config/theme/app_theme.dart';
+import '../../../../widgets/widgets.dart';
 import '../../providers/select_age_provider.dart';
-import '../../providers/select_height_provider.dart';
+import '../../providers/select_weight_provider.dart';
 
-class SelectHeight extends StatelessWidget {
-  const SelectHeight({super.key});
+class SelectWeight extends StatelessWidget {
+  const SelectWeight({super.key});
 
   @override
   Widget build(BuildContext context) {
     return TemplateSetupScreen(
-      title: 'What Is Your Height?',
-      widget: SelectHeightView(),
+      title: 'What Is Your Weight?',
+      widget: SelectWeightView(),
     );
   }
 }
 
-class SelectHeightView extends ConsumerWidget {
-  const SelectHeightView({super.key});
+class SelectWeightView extends ConsumerWidget {
+  const SelectWeightView({super.key});
 
   @override
   Widget build(BuildContext context, ref) {
@@ -29,7 +30,7 @@ class SelectHeightView extends ConsumerWidget {
         SizedBox(height: 20),
         Center(
           child: Text(
-            'And yes, the weight also affect directly the \nnutrients and training you need.',
+            'The weight also affect directly the \nnutrients and training you need.',
             textAlign: TextAlign.center,
             style: GoogleFonts.leagueSpartan(
               fontSize: 14,
@@ -39,59 +40,14 @@ class SelectHeightView extends ConsumerWidget {
           ),
         ),
         SizedBox(height: 20),
-        Container(
-          width: MediaQuery.sizeOf(context).width / 1.2,
-          height: 60,
-          decoration: BoxDecoration(
-            color: secondaryColor,
-            borderRadius: BorderRadius.circular(18),
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              TextButton(
-                onPressed: () {
-                  ref.read(selectedTypeHeightProvider.notifier).state = 'Cm';
-                },
-                child: Text(
-                  'Cm',
-                  style: GoogleFonts.poppins(
-                    fontSize: 20,
-                    color:
-                        ref.watch(selectedTypeHeightProvider).toString() == 'Cm'
-                            ? lightdarkColor
-                            : lightdarkColor.withOpacity(0.4),
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-              Container(
-                height: 50,
-                width: 5,
-                decoration: BoxDecoration(
-                  color: darkColor,
-                  border: Border.all(color: darkColor),
-                  borderRadius: BorderRadius.circular(18),
-                ),
-              ),
-              TextButton(
-                onPressed: () {
-                  ref.read(selectedTypeHeightProvider.notifier).state = 'Ft';
-                },
-                child: Text(
-                  'Ft',
-                  style: GoogleFonts.poppins(
-                    fontSize: 20,
-                    color:
-                        ref.watch(selectedTypeHeightProvider).toString() == 'Ft'
-                            ? lightdarkColor
-                            : lightdarkColor.withOpacity(0.4),
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-            ],
-          ),
+        GreenContainerSelector(
+          isForWeight: true,
+          onIntlPressed: () {
+            ref.read(selectedTypeWeightProvider.notifier).state = 'Kg';
+          },
+          onEngPressed: () {
+            ref.read(selectedTypeWeightProvider.notifier).state = 'Lb';
+          },
         ),
         SizedBox(height: 50),
         PurpleBar(
@@ -104,7 +60,6 @@ class SelectHeightView extends ConsumerWidget {
               diameterRatio: 3,
               onSelectedItemChanged: (value) {
                 ref.read(selectedValueProvider.notifier).state = value;
-                print(value);
               },
               itemExtent: 100,
               children: List.generate(
@@ -156,7 +111,7 @@ class SelectHeightView extends ConsumerWidget {
                     Transform(
                       transform: Matrix4.translationValues(50, -35, 0),
                       child: Text(
-                        ref.watch(selectedTypeHeightProvider).toString(),
+                        ref.watch(selectedTypeWeightProvider).toString(),
                         style: GoogleFonts.poppins(
                           fontSize: 20,
                           color: Colors.grey,

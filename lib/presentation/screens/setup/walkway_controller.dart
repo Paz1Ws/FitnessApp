@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../../widgets/widgets.dart';
-import '../../screens.dart';
+import '../../widgets/widgets.dart';
+import '../screens.dart';
 import 'providers/scrollable_controller_provider.dart';
 
 class WalkwayController extends ConsumerStatefulWidget {
   const WalkwayController({super.key});
 
   @override
-  _WalkwayControllerState createState() => _WalkwayControllerState();
+  WalkwayControllerState createState() => WalkwayControllerState();
 }
 
-class _WalkwayControllerState extends ConsumerState<WalkwayController> {
+class WalkwayControllerState extends ConsumerState<WalkwayController> {
   final PageController pageController = PageController();
   bool isInitialPage = true;
   final List<Widget> widgets = [
@@ -20,9 +20,9 @@ class _WalkwayControllerState extends ConsumerState<WalkwayController> {
     SelectAge(),
     SelectWeight(),
     SelectHeight(),
-    // SelectGoal(),
-    // SelectActivityLevel(),
-    // FillProfile(),
+    SelectGoal(),
+    SelectActivityLevel(),
+    FillProfile(),
   ];
 
   void nextPage() {
@@ -32,6 +32,10 @@ class _WalkwayControllerState extends ConsumerState<WalkwayController> {
     );
     setState(() {
       isInitialPage = false;
+      // Here we are setting the scrollableControllerProvider to false
+      // until the user fill information in the last page.
+      // Remember control the value of the scrollableControllerProvider
+      // in the another pages.
       ref.read(scrollableControllerProvider.notifier).state = false;
     });
   }
@@ -42,6 +46,8 @@ class _WalkwayControllerState extends ConsumerState<WalkwayController> {
         ref.watch(scrollableControllerProvider.notifier).state;
     return Scaffold(
         body: PageView(
+          // Here we are setting the physics to null if the user has not filled the information.
+
           physics: allowScroll ? null : AlwaysScrollableScrollPhysics(),
           controller: pageController,
           children: widgets,
@@ -49,7 +55,11 @@ class _WalkwayControllerState extends ConsumerState<WalkwayController> {
         floatingActionButton: Transform(
           transform: Matrix4.translationValues(-70, -30, 0),
           child: NextButton(
-            text: isInitialPage ? 'Next' : 'Continue',
+            text: isInitialPage
+                ? 'Next'
+                : pageController.page == widgets.length - 1
+                    ? 'Start'
+                    : 'Continue',
             onPressed: allowScroll ? nextPage : null,
           ),
         ));

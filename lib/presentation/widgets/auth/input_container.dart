@@ -8,11 +8,12 @@ class InputContainer extends StatelessWidget {
   List<String> textFormFields;
   int formFields;
   bool islogin;
+  bool isFillProfile = false;
   InputContainer({
     required this.textFormFields,
     required this.formFields,
     required this.islogin,
-    super.key,
+    this.isFillProfile = false,
   });
 
   @override
@@ -35,7 +36,8 @@ class InputContainer extends StatelessWidget {
                     children: [
                       Text(" ${textFormFields[index]}",
                           style: GoogleFonts.leagueSpartan(
-                            color: lightdarkColor,
+                            color:
+                                isFillProfile ? primaryColor : lightdarkColor,
                             fontSize: 18,
                             fontWeight: FontWeight.w600,
                           )),

@@ -3,8 +3,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 // import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../../../../../../config/theme/app_theme.dart';
-import '../../../../../widgets/widgets.dart';
+import '../../../../../config/theme/app_theme.dart';
+import '../../../../widgets/widgets.dart';
 import '../../providers/select_age_provider.dart';
 
 class SelectAge extends StatelessWidget {

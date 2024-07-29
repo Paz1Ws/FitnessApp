@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../../../../../../config/theme/app_theme.dart';
-import '../../../../../widgets/widgets.dart';
+import '../../../../../config/theme/app_theme.dart';
+import '../../../../widgets/setup/gender_selector.dart';
+import '../../../../widgets/widgets.dart';
 import '../../providers/selected_color_provider.dart';
 
 class SelectGender extends StatefulWidget {
@@ -88,40 +89,6 @@ class SelectGenderView extends ConsumerWidget {
           ),
         ),
       ],
-    );
-  }
-}
-
-class GenderButton extends StatelessWidget {
-  const GenderButton({
-    super.key,
-    required this.color,
-    required this.icon,
-    required this.onTap,
-  });
-
-  final Color color;
-  final IconData icon;
-  final VoidCallback onTap;
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        width: 150,
-        height: 150,
-        decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          color: color,
-          border: Border.all(color: accentColor, width: 1),
-        ),
-        child: Icon(
-          icon,
-          size: 80,
-          color: color == secondaryColor ? darkColor : accentColor,
-        ),
-      ),
     );
   }
 }
